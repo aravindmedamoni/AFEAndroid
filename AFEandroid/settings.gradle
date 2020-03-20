@@ -1,0 +1,10 @@
+rootProject.name='AFEAndroid'
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir.parentFile,
+  'afe_flutter/.android/include_flutter.groovy'
+))
+
+include ':afe_flutter'
+project(':afe_flutter').projectDir = new File('../afe_flutter')
